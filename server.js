@@ -3,10 +3,8 @@ const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
 
 mongoose.Promise = global.Promise;
-mongoose.connect("mongodb+srv://ibtihelmenzli279:2I6XQBmZVFcJKkiy@cluster0.xwgp4.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0git init", 
-    {
-      useNewUrlParser: true,
-    }
+mongoose.connect("mongodb://localhost:27017/", 
+    
   )
   .then(() => {
     console.log("Successfully connected to the database");
@@ -27,6 +25,7 @@ app.get("/", (req, res) => {
 });
 
 let PORT = 8081;
+require('./app/routes/app.routes.js')(app);
 
 app.listen(PORT, () => {
   console.log(`Server is listening on port ${PORT}`);
