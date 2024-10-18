@@ -15,8 +15,8 @@ const productSchema = new mongoose.Schema({
   image: {
     type: String,
   },
-  images: {  // Nouveau champ pour plusieurs images
-    type: [String],  // Tableau de chaînes
+  images: {  
+    type: [String],  
   },
 });
 
